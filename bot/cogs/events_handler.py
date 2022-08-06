@@ -6,7 +6,7 @@ class EventListerners(commands.Cog):
 
   @commands.Cog.listener()
   async def on_ready(self):
-    print('Bot is logged in')
+    print('Bot logged in!')
 
 
 def setup(bot):
