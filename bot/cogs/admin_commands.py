@@ -8,8 +8,11 @@ class AdminCommands(commands.Cog):
 
     @commands.command(name='history',description='Admin command for loading history into Excel File')
     @commands.has_permissions(administrator=True)
-    async def history(self,ctx):
-      get_data(await ctx.channel.history().flatten())
+    async def history(self,ctx, msg_contains):
+        if msg_contains == "":
+            return
+        else:
+            get_data(await ctx.channel.history().flatten(),msg_contains)
 
 
 def setup(bot):
