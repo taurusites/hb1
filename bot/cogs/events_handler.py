@@ -10,7 +10,7 @@ class EventListerners(commands.Cog):
 
   @commands.Cog.listener()
   async def on_command_error(self,ctx,error):
-    await ctx.channel.send("Please enter a word/link to filter history for")
+    await ctx.channel.send("please use an argument along with the command, e.g. $history http://")
 
 
 
