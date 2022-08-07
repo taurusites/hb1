@@ -3,7 +3,7 @@
 <a target="_blank" href="https://arbiteria.com">Arbiteria</a>
 <a target="_blank" href="https://www.zero2ai.io/">Zero2AI</a>
 
-## This file has been primarily created for the first HEAL batch being conducted by Artbiteria
+## This file has been primarily created for the first HEAL batch being conducted by Arbiteria
 
 ## Built using -
 
