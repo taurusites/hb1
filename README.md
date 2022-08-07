@@ -16,3 +16,6 @@
 
 ### To do
 * Exit the bot cleanly
+
+### Gotcha
+* The command error handling has been shifted to event_handler, it is extremely poorly coded and should be fleshed out and made to handle both generic and $history command errors
