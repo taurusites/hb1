@@ -1,7 +1,6 @@
-from xmlrpc.client import Boolean
 import pandas as pd
 
-def get_data(messages, what_to_find)->Boolean:
+def get_data(messages, what_to_find):
     data = pd.DataFrame(columns=['content', 'time', 'author', 'channel'])
     if not messages:
         return False
@@ -9,7 +8,11 @@ def get_data(messages, what_to_find)->Boolean:
         if msg.content.find(what_to_find) != -1:
             data = data.append({'content': msg.content, 'time': msg.created_at,
                                 'author': msg.author, 'channel': msg.channel.name}, ignore_index=True)
-    print(data)
+    try:
+        file_location="data.csv"
+        data.to_csv(file_location)
+    except ValueError:
+        return False
     return True
 
 
