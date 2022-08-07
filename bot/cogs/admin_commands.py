@@ -10,14 +10,10 @@ class AdminCommands(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def history(self, ctx, arg):
         if ctx.author.guild_permissions.administrator:
-            if arg == "":
-                await ctx.channel.send("Please enter a word/link to filter history for")
-                return
+            if get_data(await ctx.channel.history().flatten(), arg):
+                await ctx.channel.send("History loaded successfully")
             else:
-                if get_data(await ctx.channel.history().flatten(), arg):
-                    await ctx.channel.send("History loaded successfully")
-                else:
-                    await ctx.channel.send("An error occured writing history or no history found")
+                await ctx.channel.send("An error occured writing history or no history found")
         else:
             await ctx.channel.send("You need administrator permissions to run this command")
 
