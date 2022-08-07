@@ -8,9 +8,9 @@ class AdminCommands(commands.Cog):
 
     @commands.command(name='history', description='Admin command for loading history into Excel File based on user defined filter')
     @commands.has_permissions(administrator=True)
-    async def history(self, ctx, arg):
+    async def history(self, ctx, *args):
         if ctx.author.guild_permissions.administrator:
-            if get_data(await ctx.channel.history().flatten(), arg):
+            if get_data(await ctx.channel.history().flatten(), args[0]):
                 await ctx.channel.send("History loaded successfully")
             else:
                 await ctx.channel.send("An error occured writing history or no history found")
